@@ -1,0 +1,94 @@
+from tkinter import *
+import os
+
+pencere=Tk()
+pencere.title("BAŞLAT MENÜSÜ")
+pencere.wm_iconbitmap("hourglass")
+#pencere.geometry("400x300")
+#pencere.state("iconic")
+
+#kapatma...
+
+def kapatma():
+    os.system("shutdown -h now")
+
+btn_kapat = Button(text="kapat",
+                   command=kapatma)
+btn_kapat.pack(side="right")
+btn_kapat.pack(anchor="sw")
+
+#reset
+
+def resetle():
+    os.system("shutdown -r now")
+
+btn_reset = Button(text="reset",
+                   command=resetle)
+btn_reset.pack(side="right")
+btn_reset.pack(anchor="sw")
+
+
+#Bilgisayar
+def disk_ac():
+    import  os
+    os.system("nautilus /")
+
+btn_disk = Button(text="BİLGİSAYARIM",
+                   command=disk_ac)
+btn_disk.pack(side="left")
+btn_disk.pack(anchor="sw")
+
+#DENETİM MASASI AÇMA
+def calistir():
+    import  os
+    os.system("unity-control-center")
+
+btn_denetim = Button(text="Denetim Masası",
+                   command=calistir)
+btn_denetim.pack(side="left")
+
+#Belge
+def belge_ac():
+    import  os
+    os.system("nautilus /home/reo-tek/Belgeler")
+
+btn_belge = Button(text="Belgeler",
+                   command=belge_ac)
+btn_belge.pack(side="left")
+btn_belge.pack(anchor="sw")
+
+#Muzik
+def muzik_ac():
+    import  os
+    os.system("nautilus /home/reo-tek/Muzik")
+
+btn_muzik = Button(text="Muzik",
+                   command=muzik_ac)
+btn_muzik.pack(side="left")
+btn_muzik.pack(anchor="sw")
+
+#Resimler
+def resim_ac():
+    import  os
+    os.system("nautilus /home/reo-tek/Resimler")
+
+btn_resim = Button(text="Resimler",
+                   command=resim_ac)
+btn_resim.pack(side="left")
+btn_resim.pack(anchor="sw")
+
+#Arama
+def search():
+    veri=entry.get()
+    print(veri)
+
+entry = Entry()
+entry.pack(side="left")
+entry.pack(anchor="sw")
+
+
+btn_ara = Button(text="ARA",
+                   command=search)
+btn_ara.pack(side="left")
+btn_ara.pack(anchor="sw")
+mainloop()
